@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metropolia Student Assistant AI- Call Interface</title>
+    <script src="https://media.twiliocdn.com/sdk/js/client/v1.13/twilio.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Metropolia Student Assistant</h1>
+            <p>Call Support: +18782187579</p>
+        </div>
+
+        <div class="phone-interface">
+            <div class="call-display">
+                <div class="caller-info" id="callerInfo">Ready to Call</div>
+                <div class="call-status" id="callStatus">Dial +18782187579 for assistance</div>
+                <div class="call-timer" id="callTimer">00:00</div>
+            </div>
+
+            <div class="conversation-box" id="conversation">
+                <div class="message ai">
+                    <div class="message-content">
+                        When you call, I'll help with course info, deadlines, and study support or you can send messages.
+                    </div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button class="btn btn-mute" id="muteBtn" title="Mute" disabled>
+                    <span class="material-icons">mic_off</span>
+                </button>
+                <button class="btn btn-call" id="callBtn" title="Start Call">
+                    <span class="material-icons">call</span>
+                </button>
+                <button class="btn btn-end" id="endBtn" title="End Call" disabled>
+                    <span class="material-icons">call_end</span>
+                </button>
+            </div>
+
+            <div class="student-input">
+                <div class="input-group">
+                    <input type="text" id="messageInput" placeholder="Type your messages here...">
+                    <button id="sendBtn">
+                        <span class="material-icons">send</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            Metropolia Student Assistant • Available 24/7
+        </div>
+    </div>
+    <script src="/static/js/call_interface.js"></script>
+</body>
+</html>

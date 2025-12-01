@@ -1,0 +1,310 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: #ffffff;
+    color: #5a3921;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    border: 1px solid #ffbd59;
+}
+
+.header {
+    background: linear-gradient(135deg, #ff751f, #ff914d);
+    color: #ffffff;
+    padding: 25px 20px;
+    text-align: center;
+    border-bottom: 3px solid #ffbd59;
+}
+
+.header h1 {
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+    color: #ffffff;
+    font-weight: 600;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.header p {
+    opacity: 0.9;
+    font-size: 0.9rem;
+    color: #fff7ed;
+}
+
+.phone-interface {
+    padding: 25px 20px;
+    background: #ffffff;
+}
+
+.call-display {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.caller-info {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #ff751f;
+}
+
+.call-status {
+    font-size: 0.9rem;
+    color: #ff914d;
+    margin-bottom: 15px;
+}
+
+.call-timer {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ff751f;
+    margin: 10px 0;
+}
+
+.conversation-box {
+    height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ffbd59;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #ffffff;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.message {
+    margin-bottom: 12px;
+    display: flex;
+}
+
+.message.ai {
+    justify-content: flex-start;
+}
+
+.message.student {
+    justify-content: flex-end;
+}
+
+.message-content {
+    max-width: 80%;
+    padding: 10px 15px;
+    border-radius: 18px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.message.ai .message-content {
+    background-color: #fff8f0;
+    border: 1px solid #ffbd59;
+    border-top-left-radius: 5px;
+    color: #5d4037;
+}
+
+.message.student .message-content {
+    background-color: #ff751f;
+    color: #ffffff;
+    border-top-right-radius: 5px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    width: 60px;
+    height: 60px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    border: 2px solid transparent;
+    font-family: 'Material Icons';
+    font-size: 24px;
+    font-weight: normal;
+    font-style: normal;
+}
+
+.btn-call {
+    background-color: #ff914d;
+    color: white;
+}
+
+.btn-call:hover {
+    background-color: #ff751f;
+    transform: scale(1.05);
+    border-color: #ffbd59;
+}
+
+.btn-end {
+    background-color: #ff751f;
+    color: white;
+}
+
+.btn-end:hover {
+    background-color: #e55a29;
+    transform: scale(1.05);
+    border-color: #ffbd59;
+}
+
+.btn-mute {
+    background-color: #ffbd59;
+    color: white;
+}
+
+.btn-mute:hover {
+    background-color: #ffa94d;
+    transform: scale(1.05);
+    border-color: #ff751f;
+}
+
+.btn:disabled {
+    background-color: #ffd7b5;
+    cursor: not-allowed;
+    transform: none;
+    border-color: transparent;
+    opacity: 0.6;
+}
+
+.student-input {
+    margin-top: 15px;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+}
+
+.input-group input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 1px solid #ffbd59;
+    border-radius: 25px;
+    outline: none;
+    font-size: 0.9rem;
+    background: #ffffff;
+    color: #5a3921;
+}
+
+.input-group input:focus {
+    border-color: #ff751f;
+    box-shadow: 0 0 0 2px rgba(255, 117, 31, 0.2);
+}
+
+.input-group input::placeholder {
+    color: #ff914d;
+}
+
+.input-group button {
+    padding: 0 20px;
+    background-color: #ff751f;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-family: 'Material Icons';
+    font-size: 20px;
+}
+
+.input-group button:hover {
+    background-color: #e55a29;
+}
+
+.footer {
+    text-align: center;
+    padding: 15px;
+    font-size: 0.8rem;
+    color: #ff914d;
+    border-top: 1px solid #ffbd59;
+    background-color: #fff8f0;
+}
+
+/* Animation for active call */
+@keyframes pulse-ring {
+    0% {
+        transform: scale(0.8);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+.pulse-ring {
+    position: relative;
+}
+
+.pulse-ring::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #ff751f;
+    animation: pulse-ring 1.5s ease-out infinite;
+    z-index: -1;
+}
+
+.conversation-box::-webkit-scrollbar {
+    width: 6px;
+}
+
+.conversation-box::-webkit-scrollbar-track {
+    background: #fff8f0;
+    border-radius: 3px;
+}
+
+.conversation-box::-webkit-scrollbar-thumb {
+    background: #ff914d;
+    border-radius: 3px;
+}
+
+.conversation-box::-webkit-scrollbar-thumb:hover {
+    background: #ff751f;
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiasing;
+}
