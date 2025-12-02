@@ -120,6 +120,35 @@ async function sendMessage() {
       messageInput.value = '';
 
         // Sending message to backend using relative URL
+     try {
+         const response = await fetch(getApiUrl('/chat'), {
+            method: 'POST',
+            headers: {
+               'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+               message: message,
+               session_id: sessionId
+            })
+         });
+
+         if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+         }
+
+         const data = await response.json();
+         if (data.response) {
+            addMessage(data.response);
+         } else {
+            addMessage("Error: " + data.error);
+         }
+      } catch (error) {
+         console.error('Send message error:', error);
+         addMessage("Error sending message: " + error.message);
+      }
+   } else if (message && !callActive) {
+      addMessage("Please start a call first", true);
+   }
 }
 
 // Event listeners

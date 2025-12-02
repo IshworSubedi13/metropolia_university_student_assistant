@@ -1,6 +1,6 @@
 import logging
-from flask import send_from_directory, Flask
-from flask_cors import CORS
+
+from flask import send_from_directory
 
 from app import create_app
 from app.config import config
