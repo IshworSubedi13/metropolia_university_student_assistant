@@ -1,0 +1,108 @@
+# =========================
+# macOS System Files
+# =========================
+
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+# Thumbnails
+._*
+
+# Files that might appear on external disks
+.Spotlight-V100
+.Trashes
+
+# macOS system metadata
+.fseventsd
+.VolumeIcon.icns
+
+
+# =========================
+# Python
+# =========================
+
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Test / coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Caches
+.cache/
+.mypy_cache/
+.pylint.d/
+
+
+# =========================
+# Flask
+# =========================
+
+instance/            # Flask runtime folder
+uploads/             # User uploaded files (optional)
+tmp/
+temp/
+
+# SQLite databases
+*.sqlite
+*.sqlite3
+*.db
+
+# SSL (if generated locally)
+ssl/
+
+
+# =========================
+# Environment & Secrets
+# =========================
+
+.env
+.env.*
+secrets.json
+config.json
+
+
+# =========================
+# Logging
+# =========================
+
+*.log
+logs/
+
+
+# =========================
+# Editor / IDE
+# =========================
+
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+
+# =========================
+# Optional: project files
+# =========================
+
+# If you store manuals, scraped PDFs, etc.
+files/*.pdf
+files/*.docx
+files/*.txt
