@@ -77,6 +77,27 @@ async function startCall() {
    startTimer();
 
    // Calling backend to start session using relative URL
+   try {
+      const response = await fetch(getApiUrl('/start_call'), {
+         method: 'POST',
+         headers: {
+            'Content-Type': 'application/json'
+         },
+         body: JSON.stringify({
+            session_id: sessionId
+         })
+      });
+
+      if (!response.ok) {
+         throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      addMessage(data.message);
+   } catch (error) {
+      console.error('Start call error:', error);
+      addMessage("Error starting call: " + error.message);
+   }
 }
 
 // End the call
@@ -92,7 +113,30 @@ async function endCall() {
    callBtn.classList.remove('pulse-ring');
 
    stopTimer();
+
    // Calling backend to end session - using relative URL
+   try {
+      const response = await fetch(getApiUrl('/end_call'), {
+         method: 'POST',
+         headers: {
+            'Content-Type': 'application/json'
+         },
+         body: JSON.stringify({
+            session_id: sessionId
+         })
+      });
+
+      if (!response.ok) {
+         throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      addMessage(data.message);
+   } catch (error) {
+      console.error('End call error:', error);
+      addMessage("Error ending call: " + error.message);
+   }
+
    // Reset after a moment
    setTimeout(() => {
       callerInfo.textContent = 'Ready to Call';
@@ -119,8 +163,7 @@ async function sendMessage() {
       addMessage(message, false);
       messageInput.value = '';
 
-        // Sending message to backend using relative URL
-     try {
+      try {
          const response = await fetch(getApiUrl('/chat'), {
             method: 'POST',
             headers: {
