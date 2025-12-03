@@ -10,6 +10,10 @@ def create_app():
     CORS(app)
 
     from .routes.chat import chat_bp
+    from .routes.calls import calls_bp
+    from .routes.voice import voice_bp
 
     app.register_blueprint(chat_bp)
+    app.register_blueprint(voice_bp)
+    app.register_blueprint(calls_bp)
     return app
