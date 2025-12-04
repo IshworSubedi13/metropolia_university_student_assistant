@@ -93,6 +93,7 @@ async function startCall() {
       }
 
       const data = await response.json();
+      sessionId = data.session_id;
       addMessage(data.message);
    } catch (error) {
       console.error('Start call error:', error);
